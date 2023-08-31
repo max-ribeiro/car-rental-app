@@ -14,7 +14,8 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+        $manufacturers = Manufacturer::all();
+        return $manufacturers;
     }
 
     /**
@@ -35,6 +36,8 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
+        $manufacturer = Manufacturer::create($request->all());
+        return response(null, 200);
         //
     }
 
@@ -46,7 +49,7 @@ class ManufacturerController extends Controller
      */
     public function show(Manufacturer $manufacturer)
     {
-        //
+        return $manufacturer;
     }
 
     /**

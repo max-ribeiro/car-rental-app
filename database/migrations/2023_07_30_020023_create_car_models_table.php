@@ -35,9 +35,9 @@ class CreateCarModelsTable extends Migration
      */
     public function down()
     {
-        Schema::table('car_models', function(Blueprint $table) {
-            $table->dropForeign('manufacturer_id');
-        });
+        // Schema::table('car_models', function(Blueprint $table) {
+        //     $table->dropForeign('manufacturer_id');
+        // });
 
         Schema::dropIfExists('car_models');
     }
