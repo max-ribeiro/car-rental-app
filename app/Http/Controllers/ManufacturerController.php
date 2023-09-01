@@ -19,16 +19,6 @@ class ManufacturerController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -53,17 +43,6 @@ class ManufacturerController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Manufacturer  $manufacturer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Manufacturer $manufacturer)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -73,6 +52,8 @@ class ManufacturerController extends Controller
     public function update(Request $request, Manufacturer $manufacturer)
     {
         //
+        $manufacturer->update($request->all());
+        return $manufacturer;
     }
 
     /**
@@ -84,5 +65,7 @@ class ManufacturerController extends Controller
     public function destroy(Manufacturer $manufacturer)
     {
         //
+        $manufacturer->delete();
+        return ['msg' => 'Record deleted!'];
     }
 }
